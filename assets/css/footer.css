@@ -1,0 +1,42 @@
+#footer {
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: grey;
+}
+
+li {
+    list-style: none;
+}
+
+.title {
+    display: flex;
+    padding-top: 20px;
+    padding-left: 2rem;
+    font-size: 14px;
+}
+
+.stronger {
+    color: #fff;
+    font-size: 25px;
+    font-family: SFDisplay;
+    margin-right: 10px;
+}
+
+.title-footer {
+    color: #fff;
+    font-size: 25px;
+}
+
+.section-title {
+    font-family: SFDisplay;
+    font-size: 14px;
+    color: #b5b5b5;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
