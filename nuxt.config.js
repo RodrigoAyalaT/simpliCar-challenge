@@ -17,7 +17,7 @@ export default {
 
     // Global CSS: https://go.nuxtjs.dev/config-css
     css: [
-        '~/assets/css/main', '~/assets/css/footer'
+        '~/assets/css/main', '~/assets/css/footer', '~/assets/css/success'
     ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

@@ -52,7 +52,7 @@
   width: 350px;
   border-radius: 10px;
   border: none;
-  margin-top: 53px;
+  margin-top: 10px;
   text-align: left;
   padding-left: 40px;
 }

@@ -37,7 +37,9 @@
             <tr class="fw-bold m-0 p-0">
               <td>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">{{ getCar.specs.technical_details.body }}</li>
+                  <li class="list-group-item">
+                    {{ getCar.specs.technical_details.body }}
+                  </li>
                   <li></li>
                 </ul>
               </td>
@@ -56,15 +58,23 @@
               </td>
               <td>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">{{ getCar.specs.technical_details.transmission}}</li>
+                  <li class="list-group-item">
+                    {{ getCar.specs.technical_details.transmission }}
+                  </li>
                   <li></li>
                 </ul>
               </td>
               <td>
                 <ul class="list-group list-group-flush">
-                  <li v-for="color in getCar.detail.colors" :key="color.id" class="list-group-item">
-                    <div class="vehicle-color" :style="'background-color:#'+color.hex+';'">
-                    </div>
+                  <li
+                    v-for="color in getCar.detail.colors"
+                    :key="color.id"
+                    class="list-group-item"
+                  >
+                    <div
+                      class="vehicle-color"
+                      :style="'background-color:#' + color.hex + ';'"
+                    ></div>
                   </li>
                 </ul>
               </td>
@@ -111,17 +121,25 @@
             />
           </div>
           <div class="col-12 d-grid gap-2 m-1">
-            <b-button @click="sendInf()" size="lg" class="bg-danger">Enviar Cotización por E-Mail</b-button>
+            <b-button @click="sendInf()" size="lg" class="bg-danger"
+              >Enviar Cotización por E-Mail</b-button
+            >
           </div>
         </form>
       </div>
       <div v-else class="col-6 p-4">
-        <b-card class="bg-success text-white shadow">{{message}}</b-card>
+        <b-card class="bg-success text-white shadow">{{ message }}</b-card>
+        <div class="dummy-positioning d-flex">
+          <div class="success-icon">
+            <div class="success-icon__tip"></div>
+            <div class="success-icon__long"></div>
+          </div>
+        </div>
       </div>
     </div>
     <b-overlay v-else :show="show">
       <div class="hg"></div>
-       </b-overlay>
+    </b-overlay>
   </div>
 </template>
 <style>
@@ -142,12 +160,12 @@ span {
   margin-top: 100px;
   margin-left: 100px;
 }
-.vehicle-color{
+.vehicle-color {
   width: 25px;
   height: 25px;
   border-radius: 50%;
 }
-.list-item{
+.list-item {
   height: 25px;
 }
 </style>
@@ -181,13 +199,13 @@ export default {
       sliding: null,
       show: false,
       featureList: null,
-      formInf:{
-        fullname:'',
-        email:'',
-        phone:'',
+      formInf: {
+        fullname: "",
+        email: "",
+        phone: "",
       },
-      getFormInf:null,
-      message:null,
+      getFormInf: null,
+      message: null,
     };
   },
   mounted() {
@@ -207,7 +225,7 @@ export default {
       );
       this.show = false;
     },
-    async sendInf(){
+    async sendInf() {
       this.getFormInf = await this.$axios.$post(
         "https://4my1q6hsyo.api.quickmocker.com/lead",
         {
@@ -215,12 +233,12 @@ export default {
             Accept: "application/json",
             Authorization: "Bearer qwertyuiopasdfghjklzxcvbnm123456",
           },
-          data:this.formInf,
+          data: this.formInf,
         }
       );
-      this.message = this.getFormInf.msg
-      console.log(this.getFormInf)
-    }
+      this.message = this.getFormInf.msg;
+      console.log(this.getFormInf);
+    },
   },
 };
 </script>
