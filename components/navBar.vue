@@ -1,8 +1,7 @@
 <template>
-  <div>
     <nav class="navbar p-0 navbar-expand-lg navbar-light bg-transparent">
       <div class="shadow-lg container-fluid p-0">
-        <a class="navbar-brand p-0" href="">
+        <a class="navbar-brand p-0" href="/">
           <img
             src="~/assets/logo.jpg"
             alt=""
@@ -10,6 +9,7 @@
           />
         </a>
         <b-button
+          href="/"
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -27,17 +27,18 @@
         >
           <ul class="navbar-nav nav-link me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active fw-bold" aria-current="page" href="store">Vehículos</a>
+              <a class="nav-link active fw-bold" aria-current="page" href="/store">Vehículos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link SFDisplay-bold" href="#">Descubrí Nissan</a>
+              <a class="nav-link" href="#">Descubrí Nissan</a>
             </li>
           </ul>
           <div class="col-4 d-flex justify-content-end">
-            <form class="d-flex">
+            <form class="d-flex ">
               <input
+                
                 id="search"
-                class="form-control me-2"
+                class="form-control me-2 border border-danger"
                 type="search"
                 placeholder="BUSCAR POR MODELO O VEHÍCULO"
                 aria-label="Search"
@@ -47,7 +48,6 @@
         </div>
       </div>
     </nav>
-  </div>
 </template>
 <style>
 input#search{

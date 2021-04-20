@@ -1,18 +1,21 @@
 <template>
-    <Nuxt />
+  <div class="container p-0 m-0">
+    <div>
+      <navBar></navBar>
+    </div>
+    <div>
+      <Nuxt />
+    </div>
+    <div>
+      <footer-page></footer-page>
+    </div>
+  </div>
 </template>
 
 <style>
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -59,8 +62,7 @@ html {
 }
 </style>
 <script>
-
 export default {
-  css: ['~/assets/css/main', '~/assets/css/animations']
-}
+  css: ["~/assets/css/main", "~/assets/css/animations"],
+};
 </script>

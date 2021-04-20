@@ -9,7 +9,7 @@
           :key="car.id"
         >
           <h5 class="card-title title-font text-uppercase pt-3">
-            nissan {{ car.model }}
+            nissan {{ car.model }} 
           </h5>
           <div class="col-12">
             <img
@@ -33,8 +33,12 @@
               <div class="col-4">
                 {{ car.detail.characteristics.engine }}
               </div>
-              <div class="col-4">{{ car.specs.technical_details.body }}</div>
-              <div class="col-4">{{ car.detail.characteristics.gas_type }}</div>
+              <div class="col-4">
+                {{ car.specs.technical_details.body }}
+                </div>
+              <div class="col-4">
+                {{ car.detail.characteristics.gas_type }}
+              </div>
             </div>
             <div class="card-text text-muted description mt-1">
               <small class="text-left" widht="20px">{{
@@ -44,7 +48,7 @@
             <div class="card-text">
               <button
                 class="btn btn-outline-danger mt-3"
-                onclick="location.href='/detail'"
+                @click="$router.push('/cars/'+car.id)"
               >
                 Mostrar detalle y cotización.
               </button>
@@ -53,20 +57,23 @@
         </div>
       </div>
     </div>
+    <b-overlay v-else :show="show" rounded="sm">
+      <div class="hg"></div>
+    </b-overlay>
   </div>
 </template>
 <script>
-
 export default {
   name: "carGallery",
   data() {
-    return { carList: null };
+    return { carList: null, show: false };
   },
   mounted() {
     this.fetchCars();
   },
   methods: {
     async fetchCars() {
+      this.show = true;
       this.carList = await this.$axios.$get(
         "https://4my1q6hsyo.api.quickmocker.com/product",
         {
@@ -76,7 +83,7 @@ export default {
           },
         }
       );
-      console.log(this.carList);
+      this.show = false;
     },
   },
 };
@@ -103,4 +110,6 @@ export default {
 .title-font {
   font-family: SFDisplay;
 }
+
+
 </style>

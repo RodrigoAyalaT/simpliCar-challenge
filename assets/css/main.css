@@ -1,6 +1,8 @@
 .container {
     min-width: 100%;
     width: 100vh;
+    min-height: 100%;
+    background-color: white;
 }
 
 .main {
@@ -11,7 +13,7 @@
     background-position-x: center;
     background-position-y: bottom;
     width: 100%;
-    height: 810px;
+    min-height: 810px;
 }
 
 @font-face {
@@ -24,4 +26,8 @@
 
 html {
     font-family: "SFDisplay";
+}
+
+.hg {
+    height: 810px;
 }
